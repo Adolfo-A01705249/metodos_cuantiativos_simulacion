@@ -1,9 +1,21 @@
-# Info header: title, description, usage, author
+# Generates 10 numbers with preset parameters using
+# Linear Congruential method.
 
-# Read parameter from console arguments (x, a, c, m)
+# Usage: $python lineal_congruential_method.py
 
-# generate numbers
+# Author: Guillermo C. Espino [A01704354]
+# Date: 30/august/2022
+# Class: Metodos cuantitativos y simulacion
 
-# output to file (and console optionally)
+Xo = 6
+a = 32
+c = 3
+m = 80
+Xi = Xo
 
+res = 0
 
+for x in range(10):
+    Xi = ((a * Xi) + c) % m
+    res = float(Xi / m)
+    print(res)
