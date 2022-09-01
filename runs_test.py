@@ -1,19 +1,67 @@
-# Info header: title, description, usage, author
 
-# Get arguments from console
+#Runs test
 
-# Read values from file
+# Usage: $python runs_test.py
 
-# Clean up and truncate values
+# Author: Valeria Guerra de la O [A01705318]
+# Date: 31/august/2022
+# Class: Metodos cuantitativos y simulacion
 
-# Get runs list
+#Import
+import math
 
-# Print run list
+#Variables
+rachas = list()
+n_signos=0
+t_runs=1 
 
-# Print total signs and runs
 
-# Calculate statistics
+#Read values from file 
+file = open('runs_data.txt','r')
+contents = file.readlines()
+n = len(contents)
 
-# Print statistics
+#Get rachas and runs 
+before = contents[0]
+for i in range(n):
+    if i!=0:
+        if(contents[i] >= before):
+            rachas.append('+')
+        else:
+            rachas.append('-')
+        before= contents[i]
 
-# Print conclusion
+#Get total signs
+n_signos=len(rachas)
+
+#Get total runs   
+for i in range(n_signos-1):
+    if (rachas[i] != rachas[i+1]):
+        t_runs=t_runs+1
+        
+#Get Mui
+mui=round(((2*n_signos)-1)/3,4)
+
+#Get sigma
+sigma2=((16*n_signos)-29)/90
+sigma=round(math.sqrt(sigma2),5)
+
+#Get zscore (numero de rachaz-mui / sigma)
+zscore=round((t_runs-mui)/sigma,6)
+
+
+#Output
+print('Generated signs:')
+print(*rachas)
+print('total signs:', n_signos)
+print('total runs:', t_runs)
+print('Statistics')
+print('Mui', mui)
+print('Sigma', sigma)
+print('Zscore', zscore)
+
+print('H0: Appereance of the numbers is random')
+print('H1: Appereance of the numbers is not random')
+
+
+
