@@ -64,4 +64,11 @@ print('H0: Appereance of the numbers is random')
 print('H1: Appereance of the numbers is not random')
 
 
+#|zsccore| > Z a/2 (is rejected)
+if(abs(zscore) > zet):
+    print('Since |' ,zscore, '| > |' , zet, '| H0 is rejected')
+else:
+    print('Since |' ,zscore, '| < |' , zet, '| H0 is not rejected')
+
+
 
