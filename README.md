@@ -5,4 +5,4 @@ Se implementa el metodo lineal congruencial para generar numeros aleatorios y do
 Autores:
 - Adolfo Acosta Castro [A01705249]
 - GCEM
-- VGdlO
+- Valeria Guerra de la O [A01705318]
