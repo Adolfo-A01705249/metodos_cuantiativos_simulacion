@@ -7,11 +7,16 @@
 # Date: 31/august/2022
 # Class: Metodos cuantitativos y simulacion
 
+import sys
 import math
 
 CRITICAL_ZET = 1.96
 
-file = open("runs_data.txt",'r')
+# Get arguments from console
+fileName = sys.argv[1]
+
+# Read values from file 
+file = open(fileName,'r')
 contents = file.readlines()
 n = len(contents)
 
