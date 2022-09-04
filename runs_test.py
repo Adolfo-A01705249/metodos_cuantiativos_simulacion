@@ -50,27 +50,26 @@ sigma = math.sqrt(sigma2)
 # Get zscore (numero de rachaz-mui / sigma)
 zscore = (t_runs - mui) / sigma
 
-
-# Print calculates values and conclusion
+# Print calculated values and conclusion
 print('Generated signs:')
 print(*rachas)
 
-print('total signs: ', n_signos)
-print('total runs: ', t_runs)
+print(f'total signs: {n_signos:.4f}')
+print(f'total runs: {t_runs:.4f}')
 
 print('\nStatistics')
-print('Mui = ', mui)
-print('Sigma = ', sigma)
-print('Zscore = ', zscore)
+print(f'Mui = {mui:.4f}')
+print(f'Sigma = {sigma:.4f}')
+print(f'Zscore = {zscore:.4f}')
 
 print('H0: Appereance of the numbers is random')
 print('H1: Appereance of the numbers is not random')
 
 # |zscore| > Za/2 (is rejected)
-if(abs(zscore) > CRITICAL_ZET):
-    print(f'Since |{zscore}| > |{CRITICAL_ZET}| H0 is rejected')
+if(abs(zscore) >= CRITICAL_ZET):
+    print(f'Since |{zscore:.4f}| >= |{CRITICAL_ZET:.4f}| H0 is rejected')
 else:
-    print(f'Since |{zscore}| <= |{CRITICAL_ZET}| H0 is not rejected')
+    print(f'Since |{zscore:.4f}| < |{CRITICAL_ZET:.4f}| H0 is not rejected')
 
 
 
