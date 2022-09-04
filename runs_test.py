@@ -1,4 +1,4 @@
-# Tests wether a sequence of numbers in [0, 1] is random
+# Tests whether a sequence of numbers in [0, 1] is random
 # by using the runs test
 
 # Usage: $python runs_test.py <input file name>
@@ -47,7 +47,7 @@ mui = ((2 * n_signos) - 1) / 3
 sigma2 = ((16 * n_signos) - 29) / 90
 sigma = math.sqrt(sigma2)
 
-# Get zscore (numero de rachaz-mui / sigma)
+# Get zscore (numero de rachaz - mui / sigma)
 zscore = (t_runs - mui) / sigma
 
 # Print calculated values and conclusion
@@ -78,6 +78,3 @@ if(abs(zscore) >= CRITICAL_ZET):
     print(f'Since |{zscore:.6f}| >= |{CRITICAL_ZET}| H0 is rejected')
 else:
     print(f'Since |{zscore:.6f}| < |{CRITICAL_ZET}| H0 is not rejected')
-
-
-
