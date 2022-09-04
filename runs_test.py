@@ -35,7 +35,7 @@ for i in range(n):
 n_signos = len(rachas)
 
 # Get total runs
-t_runs = 0
+t_runs = 1
 for i in range(n_signos-1):
     if rachas[i] != rachas[i+1]:
         t_runs = t_runs + 1
