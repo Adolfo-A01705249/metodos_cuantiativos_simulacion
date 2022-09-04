@@ -52,24 +52,32 @@ zscore = (t_runs - mui) / sigma
 
 # Print calculated values and conclusion
 print('Generated signs:')
-print(*rachas)
-
-print(f'total signs: {n_signos:.4f}')
-print(f'total runs: {t_runs:.4f}')
+SIGNS_LIMIT = 100
+if n_signos > SIGNS_LIMIT:
+    print_signs = input(f'There\'s a large number of signs ({n_signos}), would you like to see them anyway? (Y/N): ')
+    if print_signs == 'Y':
+        print(*rachas)
+    else:
+        print('---Signs skipped')
+else:
+    print(*rachas)
+        
+print(f'total signs: {n_signos}')
+print(f'total runs: {t_runs}')
 
 print('\nStatistics')
-print(f'Mui = {mui:.4f}')
-print(f'Sigma = {sigma:.4f}')
-print(f'Zscore = {zscore:.4f}')
+print(f'Mui = {mui:.6f}')
+print(f'Sigma = {sigma:.6f}')
+print(f'Zscore = {zscore:.6f}')
 
-print('H0: Appereance of the numbers is random')
+print('\nH0: Appereance of the numbers is random')
 print('H1: Appereance of the numbers is not random')
 
 # |zscore| > Za/2 (is rejected)
 if(abs(zscore) >= CRITICAL_ZET):
-    print(f'Since |{zscore:.4f}| >= |{CRITICAL_ZET:.4f}| H0 is rejected')
+    print(f'Since |{zscore:.6f}| >= |{CRITICAL_ZET}| H0 is rejected')
 else:
-    print(f'Since |{zscore:.4f}| < |{CRITICAL_ZET:.4f}| H0 is not rejected')
+    print(f'Since |{zscore:.6f}| < |{CRITICAL_ZET}| H0 is not rejected')
 
 
 
