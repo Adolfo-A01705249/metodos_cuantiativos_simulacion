@@ -1,4 +1,4 @@
-# Tests wether a sequence of random numbers in [0, 1] is uniformly
+# Tests whether a sequence of random numbers in [0, 1] is uniformly
 # distrutted by running the chi squared test
 
 # Usage: $python chi_squared_test.py <input file name>
@@ -68,7 +68,7 @@ print(f"\nX^2 = {chi:.4f}")
 print("\nH0: Generated numbers are not different from the uniform distribution")
 print("H1: Generated numbers are different from the uniform distribution\n")
 
-if(chi > CRITICAL_VAL):
-    print(f"Since {chi:.4f} > {CRITICAL_VAL}, H0 is rejected")
+if(chi >= CRITICAL_VAL):
+    print(f"Since {chi:.4f} >= {CRITICAL_VAL}, H0 is rejected")
 else:
     print(f"Since {chi:.4f} < {CRITICAL_VAL}, H0 is not rejected")
