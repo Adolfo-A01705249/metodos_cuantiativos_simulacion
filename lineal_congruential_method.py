@@ -7,6 +7,8 @@
 # Date: 30/august/2022
 # Class: Metodos cuantitativos y simulacion
 
+print("Linear Congruential Method\n")
+
 # Inputs
 Xo = int(input("Enter the value of Xo: ")) #6
 a = int(input("Enter the value of a: ")) #32
@@ -17,8 +19,8 @@ Xi = Xo
 
 res = 0
 
-lcfile = open('lcmethod.txt', 'w')
-print("Linear Congruential Method\nThe numbers are:\n", file = lcfile)
+lcfile = open('random_numers_lcm.txt', 'w')
+print("\nThe numbers are:")
 for x in range(10):
     Xi = ((a * Xi) + c) % m
     res = float(Xi / m)
