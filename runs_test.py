@@ -70,8 +70,8 @@ print(f'Mui = {mui:.6f}')
 print(f'Sigma = {sigma:.6f}')
 print(f'Zscore = {zscore:.6f}')
 
-print('\nH0: Appereance of the numbers is random')
-print('H1: Appereance of the numbers is not random')
+print('\nH0: Appeareance of the numbers is random')
+print('H1: Appeareance of the numbers is not random')
 
 # |zscore| > Za/2 (is rejected)
 if(abs(zscore) >= CRITICAL_ZET):
